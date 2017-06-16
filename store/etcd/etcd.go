@@ -12,8 +12,8 @@ import (
 	"golang.org/x/net/context"
 
 	etcd "github.com/coreos/etcd/client"
-	"github.com/docker/libkv"
-	"github.com/docker/libkv/store"
+	"github.com/rai-project/libkv"
+	"github.com/rai-project/libkv/store"
 )
 
 var (
@@ -60,11 +60,15 @@ func New(addrs []string, options *store.Config) (store.Store, error) {
 		err     error
 	)
 
+	headerTimeoutPerRequest := 3 * time.Second
+	if t, ok := options.Context.Value("HeaderTimeoutPerRequest").(time.Duration); ok {
+		headerTimeoutPerRequest = t
+	}
 	entries = store.CreateEndpoints(addrs, "http")
 	cfg := &etcd.Config{
 		Endpoints:               entries,
 		Transport:               etcd.DefaultTransport,
-		HeaderTimeoutPerRequest: 3 * time.Second,
+		HeaderTimeoutPerRequest: headerTimeoutPerRequest,
 	}
 
 	// Set options
@@ -88,13 +92,19 @@ func New(addrs []string, options *store.Config) (store.Store, error) {
 	s.client = etcd.NewKeysAPI(c)
 
 	// Periodic Cluster Sync
-	go func() {
-		for {
-			if err := c.AutoSync(context.Background(), periodicSync); err != nil {
-				return
+	enableAutoSync := true
+	if v, ok := options.Context.Value("AutoSync").(bool); ok {
+		enableAutoSync = v
+	}
+	if enableAutoSync {
+		go func() {
+			for {
+				if err := c.AutoSync(context.Background(), periodicSync); err != nil {
+					return
+				}
 			}
-		}
-	}()
+		}()
+	}
 
 	return s, nil
 }

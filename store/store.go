@@ -1,6 +1,7 @@
 package store
 
 import (
+	"context"
 	"crypto/tls"
 	"errors"
 	"time"
@@ -48,6 +49,7 @@ type Config struct {
 	PersistConnection bool
 	Username          string
 	Password          string
+	Context           context.Context
 }
 
 // ClientTLSConfig contains data for a Client TLS configuration in the form

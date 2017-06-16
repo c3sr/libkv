@@ -8,8 +8,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/docker/libkv"
-	"github.com/docker/libkv/store"
+	"github.com/rai-project/libkv"
+	"github.com/rai-project/libkv/store"
 	api "github.com/hashicorp/consul/api"
 )
 
