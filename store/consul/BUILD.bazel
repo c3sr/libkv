@@ -1,0 +1,25 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "go_default_library",
+    srcs = ["consul.go"],
+    importpath = "github.com/rai-project/libkv/store/consul",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//:go_default_library",
+        "//store:go_default_library",
+        "//vendor/github.com/hashicorp/consul/api:go_default_library",
+    ],
+)
+
+go_test(
+    name = "go_default_test",
+    srcs = ["consul_test.go"],
+    embed = [":go_default_library"],
+    deps = [
+        "//:go_default_library",
+        "//store:go_default_library",
+        "//testutils:go_default_library",
+        "//vendor/github.com/stretchr/testify/assert:go_default_library",
+    ],
+)

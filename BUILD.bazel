@@ -1,0 +1,40 @@
+load("@io_bazel_rules_go//go/private:rules/info.bzl", "go_info")
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_prefix", "go_test")
+load("@bazel_gazelle//:def.bzl", "gazelle")
+
+go_prefix("github.com/rai-project/libkv")
+
+gazelle(
+    name = "gazelle",
+    external = "vendored",
+)
+
+gazelle(
+    name = "gazelle_fix",
+    command = "fix",
+    external = "vendored",
+)
+
+exports_files([
+    "LICENSE.TXT",
+])
+
+go_library(
+    name = "go_default_library",
+    srcs = ["libkv.go"],
+    importpath = "github.com/rai-project/libkv",
+    visibility = ["//visibility:public"],
+    deps = ["//store:go_default_library"],
+)
+
+go_test(
+    name = "go_default_test",
+    srcs = ["libkv_test.go"],
+    embed = [":go_default_library"],
+    deps = [
+        "//store:go_default_library",
+        "//vendor/github.com/stretchr/testify/assert:go_default_library",
+    ],
+)
+
+go_info()
