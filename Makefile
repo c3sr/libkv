@@ -1,4 +1,4 @@
-PROJECT := libkv
+PROJECT := go_default_library
 
 .PHONY: default dep build run
 
@@ -9,7 +9,10 @@ dep:
 	bazel run //:gazelle_fix
 
 build:
-	bazel build ${PROJECT}
+	bazel build //:${PROJECT}
+
+test:
+	bazel build //:go_default_test
 
 run:
 	bazel run ${PROJECT}
