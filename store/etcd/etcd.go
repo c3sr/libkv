@@ -9,7 +9,7 @@ import (
 	"strings"
 	"time"
 
-	"golang.org/x/net/context"
+	"context"
 
 	etcd "github.com/coreos/etcd/client"
 	"github.com/rai-project/libkv"
