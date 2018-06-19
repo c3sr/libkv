@@ -17,6 +17,3 @@ import:
   subpackages:
   - assert
   - mock
-- package: golang.org/x/net
-  subpackages:
-  - context
