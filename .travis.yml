@@ -18,11 +18,12 @@ addons:
 before_install:
   # Symlink below is needed for Travis CI to work correctly on personal forks of libkv
   - ln -s $HOME/gopath/src/github.com/${TRAVIS_REPO_SLUG///libkv/} $HOME/gopath/src/github.com/docker
+  - curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
   - go get golang.org/x/tools/cmd/cover
   - go get github.com/mattn/goveralls
   - go get github.com/golang/lint/golint
   - go get github.com/GeertJohan/fgt
-  - glide install --force
+  - dep ensure -v
   - rm -fr vendor/github.com/Sirupsen
   - find vendor -type f -exec sed -i 's/Sirupsen/sirupsen/g' {} +
   - go build
