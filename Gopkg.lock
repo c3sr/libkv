@@ -2,113 +2,152 @@
 
 
 [[projects]]
+  digest = "1:ed112122ed4a920d944cc99b9d00b0441c11685939c28462c719488d36fe29aa"
   name = "github.com/boltdb/bolt"
   packages = ["."]
+  pruneopts = ""
   revision = "2f1ce7a837dcb8da3ec595b1dac9d0632f0f99e8"
   version = "v1.3.1"
 
 [[projects]]
+  digest = "1:df6d4635662bf88e81c6ed0edb9731514ab45eb13aef96696806a1815e5ec3dd"
   name = "github.com/coreos/etcd"
   packages = [
     "client",
     "pkg/pathutil",
     "pkg/srv",
     "pkg/types",
-    "version"
+    "version",
   ]
+  pruneopts = ""
   revision = "95a726a27e09030f9ccbd9982a1508f5a6d25ada"
   version = "v3.2.13"
 
 [[projects]]
+  digest = "1:3c3f68ebab415344aef64363d23471e953a4715645115604aaf57923ae904f5e"
   name = "github.com/coreos/go-semver"
   packages = ["semver"]
+  pruneopts = ""
   revision = "8ab6407b697782a06568d4b7f1db25550ec2e4c6"
   version = "v0.2.0"
 
 [[projects]]
+  digest = "1:56c130d885a4aacae1dd9c7b71cfe39912c7ebc1ff7d2b46083c8812996dc43b"
   name = "github.com/davecgh/go-spew"
   packages = ["spew"]
+  pruneopts = ""
   revision = "346938d642f2ec3594ed81d874461961cd0faa76"
   version = "v1.1.0"
 
 [[projects]]
+  digest = "1:20ff97d0e7354ae3a7914945b5f2c44bf8319d44099961753508072ede7a24cf"
   name = "github.com/hashicorp/consul"
   packages = ["api"]
+  pruneopts = ""
   revision = "b55059fc3d0327c92c41431e57dfd2df3f956b03"
   version = "v1.0.2"
 
 [[projects]]
   branch = "master"
+  digest = "1:f5d25fd7bdda08e39e01193ef94a1ebf7547b1b931bcdec785d08050598f306c"
   name = "github.com/hashicorp/go-cleanhttp"
   packages = ["."]
+  pruneopts = ""
   revision = "d5fe4b57a186c716b0e00b8c301cbd9b4182694d"
 
 [[projects]]
   branch = "master"
+  digest = "1:ff65bf6fc4d1116f94ac305342725c21b55c16819c2606adc8f527755716937f"
   name = "github.com/hashicorp/go-rootcerts"
   packages = ["."]
+  pruneopts = ""
   revision = "6bb64b370b90e7ef1fa532be9e591a81c3493e00"
 
 [[projects]]
+  digest = "1:f72168ea995f398bab88e84bd1ff58a983466ba162fb8d50d47420666cd57fad"
   name = "github.com/hashicorp/serf"
   packages = ["coordinate"]
+  pruneopts = ""
   revision = "d6574a5bb1226678d7010325fb6c985db20ee458"
   version = "v0.8.1"
 
 [[projects]]
   branch = "master"
+  digest = "1:59d11e81d6fdd12a771321696bb22abdd9a94d26ac864787e98c9b419e428734"
   name = "github.com/mitchellh/go-homedir"
   packages = ["."]
+  pruneopts = ""
   revision = "b8bc1bf767474819792c23f32d8286a45736f1c6"
 
 [[projects]]
+  digest = "1:256484dbbcd271f9ecebc6795b2df8cad4c458dd0f5fd82a8c2fa0c29f233411"
   name = "github.com/pmezard/go-difflib"
   packages = ["difflib"]
+  pruneopts = ""
   revision = "792786c7400a136282c1664665ae0a8db921c6c2"
   version = "v1.0.0"
 
 [[projects]]
   branch = "master"
+  digest = "1:78bea5e26e82826dacc5fd64a1013a6711b7075ec8072819b89e6ad76cb8196d"
   name = "github.com/samuel/go-zookeeper"
   packages = ["zk"]
+  pruneopts = ""
   revision = "471cd4e61d7a78ece1791fa5faa0345dc8c7d5a5"
 
 [[projects]]
+  digest = "1:306417ea2f31ea733df356a2b895de63776b6a5107085b33458e5cd6eb1d584d"
   name = "github.com/stretchr/objx"
   packages = ["."]
+  pruneopts = ""
   revision = "facf9a85c22f48d2f52f2380e4efce1768749a89"
   version = "v0.1"
 
 [[projects]]
+  digest = "1:2d0dc026c4aef5e2f3a0e06a4dabe268b840d8f63190cf6894e02134a03f52c5"
   name = "github.com/stretchr/testify"
   packages = [
     "assert",
-    "mock"
+    "mock",
   ]
+  pruneopts = ""
   revision = "b91bfb9ebec76498946beb6af7c0230c7cc7ba6c"
   version = "v1.2.0"
 
 [[projects]]
   branch = "master"
+  digest = "1:061ed2f664aed2296701b672a8044af45c86ade8404ce6adfdfc745259d75e82"
   name = "github.com/ugorji/go"
   packages = ["codec"]
+  pruneopts = ""
   revision = "ccfe18359b55b97855cee1d3f74e5efbda4869dc"
 
 [[projects]]
   branch = "master"
+  digest = "1:cf18df59978fa61823ae19ca67c1eded2077045f064812b204eeb3ee84e6466d"
   name = "golang.org/x/net"
   packages = ["context"]
+  pruneopts = ""
   revision = "434ec0c7fe3742c984919a691b2018a6e9694425"
 
 [[projects]]
   branch = "master"
+  digest = "1:da9ddad8c1330a2f0f8614cfb3263f940d01e9aa76e6e2ecde7bd81fe9f7d559"
   name = "golang.org/x/sys"
   packages = ["unix"]
+  pruneopts = ""
   revision = "b9cf5f96b68d9eaa53d5db5fef235718767f416a"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "bcf5771abf5f38ad3d75040033ecd6f0f8210b8a32236b62b4c90b19d4a4cebf"
+  input-imports = [
+    "github.com/boltdb/bolt",
+    "github.com/coreos/etcd/client",
+    "github.com/hashicorp/consul/api",
+    "github.com/samuel/go-zookeeper/zk",
+    "github.com/stretchr/testify/assert",
+    "github.com/stretchr/testify/mock",
+  ]
   solver-name = "gps-cdcl"
   solver-version = 1
