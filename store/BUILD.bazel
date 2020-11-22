@@ -6,6 +6,6 @@ go_library(
         "helpers.go",
         "store.go",
     ],
-    importpath = "github.com/rai-project/libkv/store",
+    importpath = "github.com/c3sr/libkv/store",
     visibility = ["//visibility:public"],
 )

@@ -2,7 +2,7 @@ load("@io_bazel_rules_go//go/private:rules/info.bzl", "go_info")
 load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_prefix", "go_test")
 load("@bazel_gazelle//:def.bzl", "gazelle")
 
-go_prefix("github.com/rai-project/libkv")
+go_prefix("github.com/c3sr/libkv")
 
 gazelle(
     name = "gazelle",
@@ -22,7 +22,7 @@ exports_files([
 go_library(
     name = "go_default_library",
     srcs = ["libkv.go"],
-    importpath = "github.com/rai-project/libkv",
+    importpath = "github.com/c3sr/libkv",
     visibility = ["//visibility:public"],
     deps = ["//store:go_default_library"],
 )

@@ -11,8 +11,8 @@ import (
 	"time"
 
 	"github.com/boltdb/bolt"
-	"github.com/rai-project/libkv"
-	"github.com/rai-project/libkv/store"
+	"github.com/c3sr/libkv"
+	"github.com/c3sr/libkv/store"
 )
 
 var (

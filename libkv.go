@@ -5,7 +5,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/rai-project/libkv/store"
+	"github.com/c3sr/libkv/store"
 )
 
 // Initialize creates a new Store object, initializing the client

@@ -3,7 +3,7 @@ load("@io_bazel_rules_go//go:def.bzl", "go_library")
 go_library(
     name = "go_default_library",
     srcs = ["mock.go"],
-    importpath = "github.com/rai-project/libkv/store/mock",
+    importpath = "github.com/c3sr/libkv/store/mock",
     visibility = ["//visibility:public"],
     deps = [
         "//store:go_default_library",
