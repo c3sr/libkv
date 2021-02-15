@@ -135,18 +135,7 @@ func (s *Consul) renewSession(pair *api.KVPair, ttl time.Duration) error {
 			return err
 		}
 
-		lockOpts := &api.LockOptions{
-			Key:     pair.Key,
-			Session: session,
-		}
-
-		// Lock and ignore if lock is held
-		// It's just a placeholder for the
-		// ephemeral behavior
-		lock, _ := s.client.LockOpts(lockOpts)
-		if lock != nil {
-			lock.Lock(nil)
-		}
+		pair.Session = session
 	}
 
 	_, _, err = s.client.Session().Renew(session, nil)
@@ -211,7 +200,7 @@ func (s *Consul) Put(key string, value []byte, opts *store.WriteOptions) error {
 		}
 	}
 
-	_, err := s.client.KV().Put(p, nil)
+	_, _, err := s.client.KV().Acquire(p, nil)
 	return err
 }
 
