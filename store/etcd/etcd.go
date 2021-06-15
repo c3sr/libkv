@@ -11,7 +11,7 @@ import (
 
 	"context"
 
-	etcd "github.com/coreos/etcd/client"
+	etcd "go.etcd.io/etcd/client/v2"
 	"github.com/c3sr/libkv"
 	"github.com/c3sr/libkv/store"
 )
